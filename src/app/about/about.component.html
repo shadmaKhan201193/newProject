@@ -1,0 +1,44 @@
+<mat-toolbar class="mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+InfrasoftTech</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+        <ul>
+            <li><span>Master</span></li>
+            <li (click)="goToPage('citylist')"><a [routerLink]="[ 'citylist']">City</a></li>
+            <li (click)="goToPage('country')"><a [routerLink]="[ 'country']">Country</a></li>
+            <li (click)="goToPage('genderlist')"><a [routerLink]="[ 'genderlist']">Gender</a></li>
+          
+    </ul>
+        <mat-divider></mat-divider>
+
+       <ul>
+            <li>Customer</li>
+                <li>CreateCustomer</li>
+            
+        </ul>
+    
+   
+              <mat-divider></mat-divider>
+              <ul> 
+                <li>Loan</li>
+                
+                    <li>LoanCre </li>
+            </ul>
+            
+       
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z8">
+            Main content here!
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

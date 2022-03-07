@@ -1,0 +1,36 @@
+
+<nav class="navbar navbar-light">
+    <div class="container-fluid">
+         InfrasoftTech 
+        <div class="d-flux">
+        <button class="btn btn-success" (click)="goToPage('cityCrud')">Add City</button>
+        </div>
+    </div>
+    </nav>
+    
+    <!--- table created-->
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">City Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Display Name</th>
+                <th scope="col">State Id</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let city of cityclass |paginate: {itemsPerPage:5,currentPage:p};">
+                <td>{{city.cityId}}</td>
+                <td>{{city.cityName}}</td>
+                <td>{{city.cityDisplayName}}</td>
+                <td>{{city.stateId}}</td>
+                <td>
+        <Button class="btn btn-info" (click)="UpdateCityRecords(city.cityId)" >Update</Button>&nbsp;
+        <Button class="btn btn-danger">Delete</Button>
+            </td>
+        
+            </tr>
+        </tbody>
+        <pagination-controls (pageChange)="p=$event"></pagination-controls>
+</table>
+

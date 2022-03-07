@@ -1,0 +1,19 @@
+.demo{
+     display: grid; place-items: center; 
+}
+
+span{
+     font-size: 70%;
+ 
+ }
+ .navbar{
+     background: #004a9f;
+     color: white;
+     height: 70px;
+ }
+ .save{
+    background: #004a9f;
+    color: white;
+    margin-left: 25%;
+    margin-right: 25%;
+}

@@ -1,0 +1,33 @@
+<nav class="navbar navbar-light">
+    <div class="container-fluid">
+         InfrasoftTech 
+        <div class="d-flux">
+        <button class="btn btn-success" (click)="goToPage('genderCrud')">Add gender</button>
+        </div>
+    </div>
+    </nav>
+        
+    <!--- table created-->
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">gender Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Display Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let gender of genderclass |paginate: {itemsPerPage:5,currentPage:p};">
+                <td>{{gender.genderId}}</td>
+                <td>{{gender.genderName}}</td>
+                <td>{{gender.genderDisplayName}}</td>
+                <td>
+        <Button class="btn btn-info" (click)="UpdateGenderRecords(gender.genderId)" >Update</Button>&nbsp;
+        <Button class="btn btn-danger">Delete</Button>
+            </td>
+        
+            </tr>
+        </tbody>
+        <pagination-controls (pageChange)="p=$event"></pagination-controls>
+</table>
+

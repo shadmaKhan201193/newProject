@@ -1,0 +1,40 @@
+
+<nav class="navbar navbar-light">
+<div class="container-fluid">
+     InfrasoftTech 
+    <div class="d-flux">
+    <button class="btn btn-success" (click)="goToPage('countryCrud')">Add Country</button>
+    </div>
+</div>
+</nav>
+
+<!--- table created-->
+    <table class="table" >
+<thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Display Name</th>
+        <th scope="col">Abbreviations</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let country of countrydemo |paginate: {itemsPerPage:5,currentPage:p};">
+        <td>{{country.countryId}}</td>
+        <td>{{country.countryName}}</td>
+        <td>{{country.countryDisplayName}}</td>
+        <td>{{country.countryAbbr}}</td>
+        <td>
+<Button class="btn btn-info" (click)="UpdateCountryRecords(country.countryId)" >Update</Button>&nbsp;
+<Button class="btn btn-danger" (click)="DeleteCountryRecords(country.countryId)">Delete</Button>
+    </td>
+
+    </tr>
+</tbody>
+<pagination-controls (pageChange)="p=$event"></pagination-controls>
+</table>
+
+<div class="back">&nbsp;
+   &nbsp; <a href="" (onclick)="goToPage('about')">Back</a>
+<!--- table created end-->
+</div>

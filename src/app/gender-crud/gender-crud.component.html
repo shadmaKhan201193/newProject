@@ -1,0 +1,58 @@
+<nav class="navbar navbar-light">
+    <div class="container-fluid">
+      InfrasoftTech 
+
+    </div>
+    </nav><br><br>
+<!--nav end-->
+<!--form table start-->
+<div class="demo">
+    <h5 class="text-center">Add gender page</h5>
+<!--alert start-->
+<div *ngIf="alert" class="alert alert-success d-flex align-items-center" role="alert">
+  <strong>Success ! </strong>&nbsp; Your data updated successfully
+  <button (click)="CloseAlert()" type="button" class="close" data-dismis="alert" aria-label="Close">
+  </button>
+  <span aria-hidden="true">&times;</span>
+</div>
+    <!--alert start end-->
+
+
+  <form #loginForm="ngForm">
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label for="genderId">ID</label>
+<input type="text" class="form-control" required #genderId="ngModel" id="genderId" name="genderId" [(ngModel)]="genderclass.genderId" ngModel >
+<span *ngIf="genderId.invalid && genderId.touched" style="color: red;">Please enter gender id</span><br><br>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label for="genderName">Name</label>
+          <input type="text" class="form-control" required #genderName="ngModel" id="genderName" name="genderName" [(ngModel)]="genderclass.genderName" ngModel >
+          <span *ngIf="genderName.invalid && genderName.touched" style="color: red;">Please enter gender name</span><br><br>
+
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label for="genderDisplayName">Display Name</label>
+          <input type="text" class="form-control" id="genderDisplayName" required #genderDisplayName="ngModel" name="genderDisplayName" [(ngModel)]="genderclass.genderDisplayName" ngModel>
+          <span *ngIf="genderDisplayName.invalid && genderDisplayName.touched" style="color: red;">Please enter display name</span><br><br>
+
+        </div>
+
+      <!--- <div class="col-md-6 mb-3">
+          <label for="stateId">state Id</label>
+          <input type="text" class="form-control" id="stateId" required #stateId="ngModel" name="stateId" [(ngModel)]="cityclass.stateId" ngModel>
+          <span *ngIf="stateId.invalid && stateId.touched" style="color: red;">Please enter state Id </span><br><br>
+
+        </div>    -->
+
+      </div>
+      <button [disabled]="loginForm.invalid" type="submit" class="save"  (click)="AddGender()">Save Form</button>
+    </form>
+
+
+
+          </div>

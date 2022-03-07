@@ -1,0 +1,24 @@
+<section class="joinnow">
+
+  
+  <div class="login col-lg-4 m-auto shadow-lg">
+    
+      <form #loginForm="ngForm">
+            <h3>Login page</h3><br>
+            <label for="Username">User Name</label>
+            <input type="text" required #name="ngModel" pattern="[a-zA-Z]+$" placeholder="name" class="form-control" name="Username" ngModel>
+          <span *ngIf="name.invalid && name.touched" style="color: red;">Please enter valid input</span><br><br>
+
+        
+            <label for="password">Password</label>
+            <input type="password"  required #password="ngModel" placeholder="password" class="form-control" name="password" ngModel>
+          
+          <span *ngIf="password.invalid && password.touched" style="color: red;">Please enter valid input</span><br><br>
+
+         <button [disabled]="loginForm.invalid" type="submit" class="loginbutton col-lg-12" (click)="goToPage('about')">Log In</button>
+
+        </form>
+
+  </div>
+</section>
+
